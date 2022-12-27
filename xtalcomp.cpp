@@ -16,9 +16,10 @@
 #include "xtalcomp.h"
 
 #include "stablecomparison.h"
+#include <spglib.h>
 
 extern "C" {
-#include "spglib/spglib.h"
+#include <spglib.h>
 }
 
 #include <algorithm>
@@ -237,11 +238,11 @@ bool XtalComp::compare(const XcMatrix &_cellMatrix1,
     //if (numAtoms2 != types2.size()) cellReduced2 = true;
 
     if (spg1 < 1 || spg1 > 230) {
-      std::cerr << "An invalid spg was detected by spglib for cell 1\n";
+//      std::cerr << "An invalid spg was detected by spglib for cell 1\n";
       return false;
     }
     if (spg2 < 1 || spg2 > 230) {
-      std::cerr << "An invalid spg was detected by spglib for cell 2\n";
+//      std::cerr << "An invalid spg was detected by spglib for cell 2\n";
       return false;
     }
   }
